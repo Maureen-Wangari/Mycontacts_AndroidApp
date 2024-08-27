@@ -1,10 +1,12 @@
 package com.njerireen.mycontacts.model
 
 import androidx.room.Entity
+import androidx.room.Index
+import androidx.room.PrimaryKey
 
-@Entity(tableName = "Contacts")
+@Entity(tableName = "Contacts", indices = [Index(value = arrayOf("phoneNumber"), unique = true)])
 data class Contact(
-    var contactId:Int,
+    @PrimaryKey(autoGenerate = true) var contactId: Int,
     var name: String,
     var phoneNumber: String,
     var email: String,
