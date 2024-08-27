@@ -15,6 +15,10 @@ class ContactsViewModel: ViewModel() {
         }
     }
     fun getAllContacts():LiveData<List<Contact>>{
-        return  contactsRepository.getAllContacts()
+        return contactsRepository.getAllContacts()
+    }
+
+    fun getContactById(contactId:Int):LiveData<Contact>{
+        return contactsRepository.getContactById(contactId)
     }
 }
